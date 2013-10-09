@@ -1,5 +1,5 @@
 <?php
-$db_name = "kidsgoals";
+$db_name = "bankbok_bus";
 $db_user = "root";
 $db_pass = "";
 $db_host = "localhost";
