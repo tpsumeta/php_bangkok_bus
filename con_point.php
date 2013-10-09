@@ -1,10 +1,10 @@
 <?php
-include './config.php';
-
+include 'config.php';
+if(isset($_REQUEST['id_point'])){
 $id = $_REQUEST['id_point'];
 $name = $_REQUEST['name_point'];
 $road = $_REQUEST['road'];
-
+}
 function  select(){
 $sql_point = "select * from tb_point";
 $re_sql = mysql_query($sql_point);
