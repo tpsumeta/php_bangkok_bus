@@ -28,14 +28,14 @@
         <div class="navbar-inner">
             <div class="container">
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </a><a class="brand" href="index.html">HOME</a>
+                </a><a class="brand" href="index.php">HOME</a>
                 <div class="nav-collapse collapse">
                     <ul class="nav">
                         <li class="active">
                         
-                        <a href="index.html">Overview</a> </li>
-                        <li class=""><a href="basecss.html">Base CSS</a> </li>
-                        <li class=""><a href="components.html">Components</a> </li>
+                        <a href="bus.php">Bus</a> </li>
+                        <li class=""><a href="point.php">Point</a> </li>
+                        <li class=""><a href="components.html">Information</a> </li>
                         
                     </ul>
                 </div>
