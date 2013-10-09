@@ -1,7 +1,11 @@
 <?php
 
+if(isset($_REQUEST['p1']) && isset($_REQUEST['p2'])){
+    
 $p1 = $_REQUEST['p1'];
 $p2 = $_REQUEST['p2'];
+
+}
 function  select(){
 
  $sql_bus = "";
