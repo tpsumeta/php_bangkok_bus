@@ -1,39 +1,34 @@
 <?php include 'head.php'; ?>
-<!-- Masthead
-================================================== -->
-<header class="jumbotron masthead">
-    <div class="inner">
 
-    </div>
-    <center>
-        <form class="well form-search">
-            <div class="bs-links" >
-
-
-                <strong>จาก</strong> <input type="text" class="input-small">
-                <strong>ถึง</strong> <input type="text" class="input-small">
-                <button type="submit" class="btn  btn-large ">Search</button>
-            </div></form>
-    </center>
-</header>
-<hr class="soften">
-<div class="container">
-    <div class="marketing">
-        <h1>
-            Built with metro-bootstrap.</h1>
-        <div class="row-fluid">
-            <ul class="thumbnails example-sites">
-                <li class="span3"><a class="thumbnail" href="docs/talkslab.png" target="_blank">
-                        <img src="docs/talkslab.png" alt="SoundReady.fm">
-                    </a></li>
-            </ul>
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content inset">
+    <div class="row">
+        <div class="col-md-12">
+            <center>
+                <p class="lead">ค้นหาจากสถานที่</p>
+                เริ่ม <input type="text" class="well" placeholder="เริ่มต้นจาก">   ถึง <input class="well" type="text" name="s2" placeholder="ต้องการไป"/>
+                <input class="well " type="submit" name="btnsub" value="ค้นหา"/>
+            </center>
         </div>
+        <div class="col-md-12">
+           <table class="table table-striped">
+               <th>ลำดับ</th><th>สายที่ผ่าน</th><th>อื่นๆ</th>
+            <tr>
+                <td>1</td>
+                 <td>ddd</td>
+                  <td>ddd</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                 <td>ddd</td>
+                  <td>xxxxxxxxxxxxxxxxddd</td>
+                
+            </tr>
+        </table>
+        </div>
+
     </div>
 </div>
 
 
-<!-- /.marketing -->
-
-<!-- Footer
-================================================== -->
-<?php include './foot.php'; ?>
+<?php include 'foot.php'; ?>

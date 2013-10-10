@@ -1,20 +1,17 @@
 <?php
 
-include 'config.php';
+include '../config.php';
 
 if(isset($_REQUEST['id_bus'])){
 $id = $_REQUEST['id_bus'];
 $name = $_REQUEST['name_bus'];
 $detail = $_REQUEST['detail'];
 }
-
-select();
 function select() {
 
     $sql_bus = "select * from tb_bus";
     $re_sql = mysql_query($sql_bus);
-    $row_sql = mysql_fetch_array($re_sql);
-    
+      
 }
 
 function insert() {
@@ -36,6 +33,7 @@ function delete() {
 }
 
 ?>
+
 
 
 

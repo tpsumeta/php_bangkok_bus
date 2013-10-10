@@ -1,52 +1,46 @@
-<?php 
+<?php
+include 'config.php';
 if (isset($_REQUEST['name'])) {    
     $name = $_REQUEST['name'] ;
 }else{
     $name ='';
 }
-
-include 'head.php'; ?>
-
-           <script>
-$(function() {
-	$( "#search" ).autocomplete(
-	{
-		 source:'js/source.php',
-	})
-
-});
-</script>
+?>
 
 <?php
+include 'head.php';
+
 function select($name) {
-       $sql_point = "SELECT * FROM tb_point
-WHERE id_point ='$name'";
-    $re_point = mysql_query($sql_point);
-    ?> 
+
+    $sql_bus = "SELECT * FROM tb_bus 
+WHERE id_bus IN(SELECT id_bus FROM tb_bp
+WHERE id_point =
+(select id_point from tb_point
+WHERE name_point = '$name'))";
+    $re_sql = mysql_query($sql_bus);
+    ?>    
+
     <div class="page-content inset">
         <div class="row">
             <div class="col-md-12">
                 <center>
-                    <form action="point.php" method="get">
-                    <p class="lead">ค้นหารถสถานที่</p>
-                    <input class="well" type="text"  id="search"  name ="name" placeholder="ต้องการไป"/>
-                    <input class="well " type="submit"  value="ค้นหา"/>
+                    <form action="bus.php" method="get" >
+                    <p class="lead">ค้นหารถเมล์</p>
+                    <input class="well" type="text" name="name" placeholder="ต้องการไป"/>
+                    <input class="well " type="submit" value="ค้นหา"/>
                     </form>
                 </center>
             </div>
             <div class="col-md-12">
-ชื่อจุดที่เลือก <?=$name ?>
-<?php $sql_bus = "SELECT * FROM tb_bus WHERE id_bus IN(SELECT id_bus FROM tb_bp WHERE id_point =(
-    SELECT id_point FROM tb_point WHERE name_point='$name' ))" ?>
-<?php $re_bus = mysql_query($sql_bus) ?>
+
                 <table class="table table-striped">
-                    <th>ลำดับ</th><th>สาย</th><th>ชื่อ</th>
+                    <th>ลำดับ</th><th>สายที่ผ่าน</th><th>ชื่อ</th>
                     <?php $n = 1; ?>
-    <?php while ($row_bus = mysql_fetch_array($re_bus)) { ?>
+    <?php while ($re = mysql_fetch_array($re_sql)) { ?>
                         <tr>
                             <td><?=$n?></td>
-                            <td><?= $row_bus['num_bus'] ?></td>
-                            <td><?= $row_bus['name_bus'] ?></td>
+                            <td><?= $re['num_bus'] ?></td>
+                            <td><?= $re['name_bus'] ?></td>
 
                         </tr>
     <?php $n++; } ?>
@@ -79,4 +73,6 @@ function delete() {
 
 select($name);
 
- include 'foot.php'; ?>
+
+include 'foot.php';
+?>
