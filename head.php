@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Bangkok Bus.com</title>
+        <title>Bangkok Bus</title>
 
 
         <link rel="stylesheet" href="js/jquery-ui-1.10.3.custom/css/ui-lightness/jquery-ui-1.10.3.custom.css"/>
@@ -37,10 +37,9 @@
                     <li><a href="index.php">หน้าแรก</a></li>
                     <li><a href="bus.php">ค้นหารถเมล์</a></li>
                     <li><a href="point.php">ค้นหาสถานที่</a></li>
-                    <li><a href="#">แนะนำติชม</a></li>
+<!--                    <li><a href="#">แนะนำติชม</a></li>
                     <li><a href="#">เกี่ยวกับเรา</a></li>
-
-                    <li><a href="#">ติตต่อเรา</a></li>
+                    <li><a href="#">ติตต่อเรา</a></li>-->
                 </ul>
             </div>
 

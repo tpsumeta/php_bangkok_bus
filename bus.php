@@ -1,14 +1,21 @@
 <?php
-include 'config.php';
+include 'head.php';
 if (isset($_REQUEST['name'])) {
     $name = $_REQUEST['name'];
 } else {
     $name = '';
 }
 ?>
+<script>
+    $(function() {
+        $("#search").autocomplete(
+                {
+                    source: 'js/source_bus.php',
+                });
 
+    });
+</script>
 <?php
-include 'head.php';
 
 function select($name) {
 
@@ -22,7 +29,7 @@ WHERE num_bus = '$name'";
             <div class="col-md-12">
                 <center>
                     <form action="bus.php" method="get" >
-                        <p class="lead">ค้นหารถเมล์  <input class="well" type="text" name="name" placeholder="รถเมล์สาย..."/>
+                        <p class="lead">ค้นหารถเมล์  <input class="well" type="text" id="search" name="name" placeholder="รถเมล์สาย..."/>
                             <input class="well " type="submit" value="ค้นหา"/></p>
 
                     </form>
@@ -42,7 +49,9 @@ WHERE num_bus = '$name'";
                         <?php while ($row_point = mysql_fetch_array($re_point)) { ?>
                             <tr>
                                 <td><?= $n ?></td>
-                                <td><?= $row_point['name_point'] ?></td>
+                                <td>
+                                    <a href="point.php?name=<?=$row_point['name_point']?>"><?= $row_point['name_point'] ?></a>
+                                </td>
                                 <td><?= $row_point['road'] ?></td>
 
                             </tr>

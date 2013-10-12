@@ -21,7 +21,7 @@
             <tr>
                 <td>2</td>
                  <td>ddd</td>
-                  <td>xxxxxxxxxxxxxxxxddd</td>
+                  <td>xx</td>
                 
             </tr>
         </table>
